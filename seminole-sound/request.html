@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Line – Seminole Sound 91.5</title>
+  <meta name="description" content="Seminole Sound 91.5, Florida State University's student-run campus radio station.">
+</head>
+<body>
+
+<!-- SITE HEADER + SHARED NAVIGATION -->
+<header>
+  <img src="images/logo.png" alt="Seminole Sound 91.5 station logo">
+  <p>91.5 FM &middot; Tallahassee &middot; Student-Run Since 1978</p>
+
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="request.html">Request Line</a></li>
+      <li><a href="join.html">Join the Station</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Request Line</h1>
+  <p>Send the studio a song request or shout-out for your favorite Seminole Sound show.</p>
+
+  <!-- SONG REQUEST FORM -->
+  <form method="post" action="#">
+    <fieldset>
+      <legend>Your Info</legend>
+      <p><label for="listener-name">Listener name:</label> <input type="text" id="listener-name" name="listener_name"></p>
+      <p><label for="listener-email">Email:</label> <input type="email" id="listener-email" name="listener_email"></p>
+      <p><label for="listener-phone">Phone:</label> <input type="tel" id="listener-phone" name="listener_phone"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Request</legend>
+      <p><label for="song-title">Song title:</label> <input type="text" id="song-title" name="song_title" required></p>
+      <p><label for="artist">Artist:</label> <input type="text" id="artist" name="artist" required></p>
+      <p>
+        <label for="show">Show:</label>
+        <select id="show" name="show">
+          <optgroup label="Weekday Shows">
+            <option value="garnet-mornings">Garnet Mornings</option>
+            <option value="seminole-sideline">Seminole Sideline</option>
+            <option value="tally-underground">Tally Underground</option>
+            <option value="doak-after-dark">Doak After Dark</option>
+          </optgroup>
+          <optgroup label="Weekend Shows">
+            <option value="weekend-wake-up">Weekend Wake-Up</option>
+            <option value="saturday-soundcheck">Saturday Soundcheck</option>
+            <option value="local-spotlight">Local Spotlight</option>
+          </optgroup>
+        </select>
+      </p>
+      <p><label for="air-time">Requested air time:</label> <input type="time" id="air-time" name="air_time"></p>
+      <p><label for="dedication">Dedication or shout-out:</label><br><textarea id="dedication" name="dedication" rows="5" cols="40" maxlength="300"></textarea></p>
+
+      <fieldset>
+        <legend>On-Air Name Preference</legend>
+        <p><input type="radio" id="read-name" name="name_preference" value="read-name"> <label for="read-name">Read my name on air</label></p>
+        <p><input type="radio" id="anonymous" name="name_preference" value="anonymous"> <label for="anonymous">Keep me anonymous</label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Genre Preferences</legend>
+        <p><input type="checkbox" id="genre-hiphop" name="genre" value="hip-hop"> <label for="genre-hiphop">Hip-hop</label></p>
+        <p><input type="checkbox" id="genre-rock" name="genre" value="rock"> <label for="genre-rock">Rock / Alternative</label></p>
+        <p><input type="checkbox" id="genre-rnb" name="genre" value="rnb"> <label for="genre-rnb">R&amp;B</label></p>
+        <p><input type="checkbox" id="genre-electronic" name="genre" value="electronic"> <label for="genre-electronic">Electronic</label></p>
+      </fieldset>
+    </fieldset>
+
+    <p><button type="submit">Send Request</button> <button type="reset">Reset Form</button></p>
+  </form>
+
+  <!-- REQUEST RULES -->
+  <aside>
+    <h2>Request Rules</h2>
+    <p>Requests are not guaranteed to air. DJs may choose when a request fits the show, and messages must be appropriate for a campus broadcast. Please submit each request only once.</p>
+  </aside>
+</main>
+
+<!-- SITE FOOTER -->
+<footer>
+  <address>
+    Seminole Sound 91.5<br>
+    Oglesby Union, Florida State University<br>
+    Tallahassee, FL 32306<br>
+    Request line: <a href="tel:+18505559115">850-555-9115</a><br>
+    Email: <a href="mailto:studio@seminolesound.example">studio@seminolesound.example</a>
+  </address>
+  <nav aria-label="Social media">
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">X</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2026 Seminole Sound 91.5. Student radio at Florida State University.</p>
+</footer>
+
+</body>
+</html>

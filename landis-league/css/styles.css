@@ -1,0 +1,473 @@
+/* ============================================================
+   Landis League — Project 2 Styles
+   One shared stylesheet for all four pages
+   ============================================================ */
+
+/* ---------- Theme / base ---------- */
+:root {
+  --garnet: #782f40;
+  --garnet-dark: #541421;
+  --gold: #ceb888;
+  --cream: #f7f3eb;
+  --paper: #fffdfa;
+  --ink: #211b1c;
+  --muted: #5e5658;
+  --line: #d8c9aa;
+  --callout: #f4ead0;
+  --shadow: 0 3px 10px rgba(50, 30, 30, 0.12);
+  --radius: 9px;
+}
+
+* { box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+main {
+  width: min(1040px, calc(100% - 32px));
+  margin: 48px auto 100px;
+}
+
+main > h1,
+main section > h2,
+main article > h2,
+main aside > h2 {
+  color: var(--garnet);
+}
+
+main > h1,
+.this-week > h2,
+.about-league > h2,
+.visit > h2,
+.standings > h2,
+.games > h2,
+.sports > h2,
+.glossary > h2,
+.apply > h2,
+.roles > h2,
+.next-steps > h2 {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 5px;
+}
+
+main > h1 { font-size: 2rem; margin: 0 0 14px; }
+h2 { font-size: 1.55rem; line-height: 1.2; }
+h3 { line-height: 1.25; }
+
+/* ---------- Shared header / navigation ---------- */
+.site-header {
+  background: var(--garnet);
+  color: #fff;
+}
+
+.header-inner {
+  width: min(1040px, calc(100% - 32px));
+  min-height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand { flex: 0 0 auto; }
+.brand-logo { width: 185px; height: auto; }
+
+.nav-list,
+.footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 0;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  outline: none;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 11px 24px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:focus { outline: 3px solid rgba(206, 184, 136, .55); outline-offset: 2px; }
+.btn-primary { background: var(--gold); color: var(--garnet-dark); }
+.btn-primary:hover { background: #dbc79b; }
+.btn-secondary { background: #fff; color: var(--garnet); border-color: var(--garnet); }
+.btn-secondary:hover { background: var(--garnet); color: #fff; }
+
+/* ---------- Home: hero ---------- */
+.hero {
+  min-height: 330px;
+  margin-bottom: 42px;
+  border-radius: 12px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(73, 15, 29, .88), rgba(84, 20, 33, .91)),
+    url("../images/hero-fields.jpg") center/cover no-repeat;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.hero-content { max-width: 650px; padding: 42px 24px; }
+.hero-title { margin: 0 0 6px; font-size: 2.45rem; color: #fff; }
+.hero-tagline { margin: 0 auto 28px; font-size: 1.1rem; }
+
+/* ---------- Home: cards / article / callout ---------- */
+.this-week,
+.about-league,
+.visit,
+.standings,
+.games,
+.sports,
+.glossary,
+.roles,
+.apply,
+.next-steps { margin-top: 38px; }
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.game-card {
+  background: var(--paper);
+  border: 1px solid #ddd4c5;
+  border-left: 4px solid var(--garnet);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 17px 18px;
+}
+
+.game-card p { margin: 0; }
+.game-sport { color: var(--garnet); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.game-matchup { margin-top: 8px !important; font-size: 1.06rem; font-weight: 700; }
+.vs { color: var(--muted); font-size: .86rem; font-weight: 400; }
+.game-time { margin-top: 8px !important; color: var(--muted); font-size: .9rem; }
+
+.about-league,
+.role-article { max-width: 100%; }
+.about-photo,
+.role-photo {
+  width: 480px;
+  border: 1px solid var(--garnet);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 18px 0;
+}
+
+.about-league p,
+.role-article p { max-width: 1000px; }
+
+.spotlight,
+.registration-rules {
+  margin-top: 40px;
+  background: var(--callout);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 28px;
+}
+
+.spotlight h2,
+.registration-rules h2 { margin: 0 0 14px; }
+.spotlight-team { color: var(--garnet-dark); margin-bottom: 8px; }
+.spotlight p { margin-bottom: 0; }
+
+.map-embed {
+  display: block;
+  width: min(680px, 100%);
+  max-width: 100%;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+  background: var(--paper);
+}
+
+/* ---------- Shared tables ---------- */
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.standings-table,
+.games-table,
+.roles-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  min-width: 620px;
+}
+
+caption {
+  text-align: left;
+  color: #41383a;
+  font-weight: 700;
+  padding: 8px 4px 12px;
+}
+
+.standings-table th,
+.standings-table td,
+.games-table th,
+.games-table td,
+.roles-table th,
+.roles-table td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e7dece;
+}
+
+thead th { background: var(--garnet); color: #fff; }
+tbody th { font-weight: 700; }
+tbody tr:nth-child(even) { background: #f3ead0; }
+tbody tr:hover { background: #ead9aa; }
+
+/* ---------- Schedule sport cards ---------- */
+.sport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 22px;
+}
+
+.sport-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sport-card:hover { transform: translateY(-4px); box-shadow: 0 7px 16px rgba(50,30,30,.18); }
+.sport-photo { width: 100%; height: 145px; object-fit: cover; }
+.sport-card h3,
+.sport-card p { margin-left: 16px; margin-right: 16px; }
+.sport-name { margin-top: 13px; margin-bottom: 2px; color: var(--garnet); }
+.sport-meta { margin-top: 0; color: var(--garnet); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.sport-card p:last-child { margin-bottom: 18px; }
+
+.term-list {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 26px;
+}
+.term-list dt { color: var(--garnet); font-weight: 800; margin-top: 10px; }
+.term-list dt:first-child { margin-top: 0; }
+.term-list dd { margin: 2px 0 12px; }
+
+/* ---------- Forms ---------- */
+.page-intro { max-width: 700px; margin-bottom: 20px; }
+
+.register-form,
+.apply-form {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+}
+
+.form-section,
+.availability-group {
+  border: 1px solid #d9cdbb;
+  border-radius: var(--radius);
+  padding: 18px 24px 22px;
+  margin: 0 0 24px;
+}
+
+.form-section legend,
+.color-group legend,
+.availability-group legend {
+  color: var(--garnet);
+  font-weight: 800;
+  padding: 0 8px;
+}
+
+.color-group { border: 0; padding: 0; margin: 14px 0; }
+.color-group legend { padding: 0; margin-bottom: 5px; }
+.color-options { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.color-option { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
+.swatch { width: 18px; height: 18px; border-radius: 50%; border: 1px solid #aaa; display: inline-block; }
+.swatch-garnet { background: var(--garnet); }
+.swatch-gold { background: var(--gold); }
+.swatch-black { background: #171717; }
+.swatch-white { background: #fff; }
+.color-option input:checked + .swatch { outline: 3px solid var(--garnet); outline-offset: 2px; }
+
+.form-row { margin-bottom: 16px; max-width: 520px; }
+.form-row label:not(.color-option) { display: block; margin-bottom: 6px; font-weight: 700; }
+.form-row-full { max-width: none; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d8ccba;
+  border-radius: 6px;
+  background: #fbf9f5;
+  color: var(--ink);
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(120, 47, 64, .2);
+  border-color: var(--garnet);
+}
+
+textarea { resize: vertical; min-height: 120px; }
+.form-row-checkbox { display: flex; align-items: flex-start; gap: 9px; max-width: none; }
+.form-row-checkbox label { font-weight: 400 !important; margin: 0 !important; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+.checkbox-list { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+
+/* ---------- Officiate ---------- */
+.role-article { margin-top: 34px; }
+.role-photo { width: 520px; }
+
+.steps-list {
+  list-style: none;
+  counter-reset: steps;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.steps-list li {
+  counter-increment: steps;
+  position: relative;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px 16px 62px;
+  min-height: 52px;
+}
+
+.steps-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--garnet);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--garnet-dark);
+  color: #fff;
+  padding: 34px 0 22px;
+}
+
+.footer-inner,
+.footer-copy {
+  width: min(1040px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-heading { color: var(--gold); font-size: 1.1rem; margin: 0 0 8px; }
+.footer-address { font-style: normal; }
+.footer-address a,
+.footer-social a { color: #fff; }
+.footer-social { display: flex; gap: 24px; padding-top: 6px; }
+.footer-social a { text-decoration: none; }
+.footer-social a:hover,
+.footer-social a:focus { color: var(--gold); text-decoration: underline; }
+.footer-copy { text-align: center; color: #d8c9c9; font-size: .82rem; margin-top: 30px; margin-bottom: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  body { font-size: 15px; }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: 2px; padding: 12px 0 10px; }
+  .brand-logo { width: 150px; }
+  .nav-list { gap: 2px 24px; }
+  .nav-link { padding: 7px 0; font-size: .9rem; }
+
+  main { width: min(100% - 28px, 1040px); margin-top: 42px; margin-bottom: 70px; }
+  main > h1 { font-size: 1.8rem; }
+
+  .hero { min-height: 0; margin-top: -8px; margin-bottom: 34px; }
+  .hero-content { padding: 48px 24px; }
+  .hero-title { font-size: 2rem; max-width: 220px; margin-left: auto; margin-right: auto; }
+  .hero-tagline { font-size: 1rem; }
+
+  .game-grid,
+  .sport-grid { grid-template-columns: 1fr; }
+  .game-grid { gap: 14px; }
+  .about-photo,
+  .role-photo { width: 100%; }
+  .spotlight,
+  .registration-rules { padding: 18px 20px; }
+
+  .register-form,
+  .apply-form { padding: 20px 16px; }
+  .form-section,
+  .availability-group { padding: 15px 14px 18px; }
+  .color-options { gap: 10px 15px; }
+  .checkbox-list { flex-direction: column; gap: 8px; }
+
+  .footer-inner { flex-direction: column; gap: 22px; }
+  .footer-social { padding-top: 0; gap: 20px; flex-wrap: wrap; }
+  .footer-copy { text-align: center; }
+}
